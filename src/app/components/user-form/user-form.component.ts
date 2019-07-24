@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { UsersService } from '../../services/users.service';
 
 @Component({
   selector: 'app-user-form',
@@ -7,9 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserFormComponent implements OnInit {
 
-  constructor() { }
+  User: FormGroup;
+
+  constructor(private userSer: UsersService) { }
 
   ngOnInit() {
+
+    let username = new FormControl();
+    let password = new FormControl();
+    let email = new FormControl();
+
+    this.User = new FormGroup({
+      username: username,
+      password: password,
+      email: email
+    })
+
+  }
+
+  onSubmit(User){
+    this.userSer.postUser(User).subscribe((res) => {
+      console.log(res);
+    })
   }
 
 }

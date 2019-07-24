@@ -10,6 +10,7 @@ import {RouterModule} from '@angular/router';
 import {appRoutes} from './routes';
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { OnePostComponent } from './components/one-post/one-post.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,9 @@ import { OnePostComponent } from './components/one-post/one-post.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

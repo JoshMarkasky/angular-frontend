@@ -14,4 +14,8 @@ export class UsersService {
     return this.httpClient.get('http://localhost:8080/getUsers');
   }
 
+  postUser(User):Observable<any>{
+    return this.httpClient.post<User>('http://localhost:8080/postUser', User);
+  }
+
 }
