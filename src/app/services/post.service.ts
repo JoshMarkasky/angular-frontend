@@ -10,8 +10,13 @@ export class PostService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getOnePost():Observable<any>{
-    return this.httpClient.get('http://localhost:8080/getOnePost');
+  getOnePost(id:number):Observable<any>{
+    return this.httpClient.get('http://localhost:8080/getOnePost/' + id);
+  }
+
+  postPost(post):Observable<any>{
+    console.log(post);
+    return this.httpClient.post<Post>('http://localhost:8080/postPost', post);
   }
 
 }

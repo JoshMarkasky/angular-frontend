@@ -6,7 +6,7 @@
       <li>{{ user.email }}</li>
       <li>{{ user.password }}</li>
       <ul *ngFor="let post of user.posts">
-        <li>{{ post.title }}</li>
+        <li><a [routerLink]="['/post/' + post.id]">{{ post.title }}</a></li>
         <li>{{ post.body }}</li>
         <ul *ngFor="let comment of post.comments">
           <li>{{comment.commentBody}}</li>

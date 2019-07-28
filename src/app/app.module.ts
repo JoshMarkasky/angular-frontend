@@ -11,6 +11,7 @@ import {appRoutes} from './routes';
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { OnePostComponent } from './components/one-post/one-post.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PostFormComponent } from './components/post-form/post-form.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NavbarComponent,
     ShowAllUsersComponent,
     UserFormComponent,
-    OnePostComponent
+    OnePostComponent,
+    PostFormComponent
   ],
   imports: [
     BrowserModule,
